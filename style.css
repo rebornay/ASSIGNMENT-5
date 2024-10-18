@@ -1,0 +1,104 @@
+* {
+    font-family: 'Lato';
+    margin: 0;
+    list-style: none;
+}
+
+
+:root {
+  --background-color: #F5F8FA;
+  --button-color: #038e7d;
+  --Freelance-block-color: #1179bf; 
+  --Input-background-color: #edeff2;
+  --Powered-by-stripe-color: #566473;
+  --Link-color: #1D2C3C;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--background-color);
+}
+
+
+/* Josh's Custom CSS Reset https://www.joshwcomeau.com/css/custom-css-reset/ */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  /*************************************** nav styling ********************************************/
+
+  .logo-box img {
+    width:6rem;
+    height: auto;
+  }
+
+  header {
+    margin-block-start: 1.5rem;
+  }
+
+  nav {
+    border: 1px solid red;
+    padding-inline: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* flex-wrap: wrap; */
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    border: 1px solid red;
+    justify-content: space-between;
+    padding-inline: 1rem;
+    gap: 1rem;
+  }
+
+  ul li a {
+    text-decoration: none;
+    color: var(--Link-color);
+    transition: .3s ease-in-out;
+    font-size: .8rem;
+  }
+
+  ul li a:hover, {
+    color: #28333e;
+    border: 1.5px solid #1D2C3C;
+    border-radius: 5%;
+    padding: .3rem .2rem;
+  }
+
+  .menu-toggle {
+    border: unset;
+    background: unset;
+    color: var(--Link-color);
+    cursor:pointer;
+  }
+
+  hr {
+    padding-block-start: 1rem;
+    border: 1px solid #E0E6EA;
+    padding-inline: 1rem;
+  }
+
+  @media screen and (max-width: 650px) {
+    ul {
+      display: none;
+    }
+  }
