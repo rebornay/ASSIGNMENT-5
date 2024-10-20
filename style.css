@@ -12,6 +12,7 @@
   --Input-background-color: #edeff2;
   --Powered-by-stripe-color: #566473;
   --Link-color: #1D2C3C;
+  --main-color: #ffffff;
 }
 
 body {
@@ -53,18 +54,22 @@ body {
   }
 
   nav {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     padding-inline: 1rem;
+    padding-block: 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     /* flex-wrap: wrap; */
+    box-shadow: -9px 9px 12px -10px rgba(73,146,230,0.59);
+    /* -webkit-box-shadow: -9px 9px 38px -10px rgba(73,146,230,0.59);
+    -moz-box-shadow: -9px 9px 38px -10px rgba(73,146,230,0.59); */
   }
 
   ul {
     display: flex;
     align-items: center;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     justify-content: space-between;
     padding-inline: 1rem;
     gap: 1rem;
@@ -77,7 +82,7 @@ body {
     font-size: .8rem;
   }
 
-  ul li a:hover, {
+  ul li a:hover {
     color: #28333e;
     border: 1.5px solid #1D2C3C;
     border-radius: 5%;
@@ -92,13 +97,123 @@ body {
   }
 
   hr {
-    padding-block-start: 1rem;
+    /* padding-block-start: 1rem; */
     border: 1px solid #E0E6EA;
     padding-inline: 1rem;
   }
 
+/* ****************************MAIN STYLING******************************* */
+
+main {
+  background-color: var(--main-color);
+  height: 100vh;
+}
+
+.headermain, .headertextmain, .footermain {
+  padding: 1rem;
+}
+/* *************************STYLING FOR BLUE text************************** */
+.headertextmain p span, .footermain p span {
+  color: var(--Freelance-block-color);
+  border: 1.3px solid  var(--Freelance-block-color);
+  display: inline-block;
+  padding-block: .35rem;
+  padding-inline: .8rem;
+  border-radius: 50%;
+}
+
+/* ***************************STYLING FOR INPUT/LABEL************************************************** */
+
+label {
+  padding-block-start: 1rem;
+}
+.input1-2{
+  padding-block-start: 1rem;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  gap: .8rem;
+  /* display: block; */
+}
+
+/* **************************FOOTER MAIN STYLING************************************************ */
+
+#credit-card {
+  margin-block-end: 1.2rem;
+}
+.greenBtn {
+  padding: .8rem 1.6rem;
+  width: 100%;
+  border: none;
+  font-weight: bold;
+  background-color: var(--button-color);
+  color: var(--main-color);
+  display: inline;
+}
+
+.greenBtn:hover {
+  color: var(--button-color);
+  background-color: var(--background-color);
+  transition: .3s ease-in-out;
+}
+
+
+
+
+
+
+
+
+/* **************************FOOTER MAIN STYLING************************************************ */
+
+
+.input1, .input2 {
+  width: 100%;
+}
+
+.input3{
+  padding-block: 1.3rem;
+}
+
+#firstname, #lastname, #email, #credit-card {
+  display: block;
+  font-size: 1rem;
+  width: 100%;
+  background-color: var(--Input-background-color);
+  border-radius: .2rem;
+  border: unset;
+  padding: .4rem;
+}
+
+input#email {
+ width: 100%;
+ padding: .6rem;
+}
+
+main .headermain h1 {
+  font-weight: 400;
+}
+
   @media screen and (max-width: 650px) {
+
+    nav {
+      position: relative;
+    }
+
     ul {
+      display: block;
+      position: absolute;
+      top: 1.65rem;
+      right: 0;
+     padding-inline: 2rem;
+     padding-block: 1rem;
+      background-color: white;
+    }
+    ul li a {
+      text-align: justify;
+    }
+
+    .nav-menu.open {
       display: none;
     }
   }

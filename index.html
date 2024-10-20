@@ -19,7 +19,7 @@
         </div>
 
         <!-- NAVIGATION DIV -->
-        <ul class="nav-menu">
+        <ul id="nav-menu" class="nav-menu open">
             <li><a href="#">Download</a></li>
             <li><a href="#">Learn more</a></li>
             <li><a href="#">Pricing</a></li>
@@ -29,15 +29,52 @@
 
         <!-- HAMBURGER DIV -->
          <div class="hamburger">
-            <button class="menu-toggle">☰</button>
-            <!-- <button class="menu-toggle">X</button> -->
+            <button id="hamburger-menu" class="menu-toggle open">☰</button>
+            <button class="menu-toggle">X</button>
          </div>
     </nav>
    </header>
     <hr>
 
     <main>
-        
+        <div class="headermain">
+            <h1>Checkout</h1> 
+        </div>
+        <hr>
+
+        <div class="headertextmain">
+            <p><span>1</span>&nbsp;&nbsp;&nbsp;Your Basic Information</p>
+
+            <div class="input1-2">
+                <div class="input1">
+                    <label for="firstname">First Name</label>
+                    <input type="text" id="firstname" placeholder="Samson">
+                </div>
+    
+                <div class="input2">
+                    <label for="lastname">Last Name</label>
+                    <input type="text" id="lastname" placeholder="Dauda">
+                </div>
+            </div>
+
+            <div class="input3">
+                <label for="email">Email</label>
+                <input type="text" id="email" placeholder="daudasamson2214@gmail.com">
+            </div>
+        </div>
+        <hr>
+        <div class="footermain">
+            <p><span>2</span>&nbsp;&nbsp;&nbsp;Your Payment Information</p>
+            <div class="input3">
+                <label for="credit-card">Credit Card</label>
+                <input type="text" id="credit-card" placeholder="Card Number &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MM/YY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CCV">
+
+                <button class="greenBtn">Buy WP Pusher</button>
+                
+            </div>
+            
+        </div>
     </main>
+    <script src="./injex.js"></script>
 </body>
 </html>
