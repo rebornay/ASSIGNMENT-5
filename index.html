@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./ASSETS/wppusher-logo copy.png" type="image/png">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="material-symbols.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=check" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
     </style>
@@ -19,23 +22,26 @@
         </div>
 
         <!-- NAVIGATION DIV -->
-        <ul id="nav-menu" class="nav-menu open">
+        <ul id="nav-menu" class="nav-menu side-bar">
+            <li onclick=closeSidebar()><button class="menu-close">X</button></li>
             <li><a href="#">Download</a></li>
             <li><a href="#">Learn more</a></li>
             <li><a href="#">Pricing</a></li>
             <li><a href="#">Help</a></li>
             <li><a href="#">Account</a></li>
         </ul>
-
-        <!-- HAMBURGER DIV -->
-         <div class="hamburger">
-            <button id="hamburger-menu" class="menu-toggle open">☰</button>
-            <button class="menu-toggle">X</button>
-         </div>
+        <ul id="nav-menu" class="nav-menu onside">
+            <li class="hideOnMobile"><a href="#">Download</a></li>
+            <li class="hideOnMobile"><a href="#">Learn more</a></li>
+            <li class="hideOnMobile"><a href="#">Pricing</a></li>
+            <li class="hideOnMobile"><a href="#">Help</a></li>
+            <li class="hideOnMobile"><a href="#">Account</a></li>
+            <li class="hideOnPc" onclick=displaySidebar()><button id="hamburger-menu" class="menu-open">☰</button></li>
+        </ul>
     </nav>
    </header>
     <hr>
-
+<div class="container">
     <main>
         <div class="headermain">
             <h1>Checkout</h1> 
@@ -66,15 +72,59 @@
         <div class="footermain">
             <p><span>2</span>&nbsp;&nbsp;&nbsp;Your Payment Information</p>
             <div class="input3">
+
                 <label for="credit-card">Credit Card</label>
-                <input type="text" id="credit-card" placeholder="Card Number &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MM/YY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CCV">
+
+                <div class="credit-card">
+                    <input class="cardNum-input" type="number" placeholder="Card Number" required/>
+                    <input class="M-input" type="number" id="expiry" name="expiry" placeholder="MM / YY" pattern="(0[1-9]|1[0-2])\/[0-9]{2}" maxlength="5" required/>
+                    <input class="CVC-input" type="number" placeholder="CVC" maxlength="10" required/>
+                </div>
 
                 <button class="greenBtn">Buy WP Pusher</button>
-                
+
+                <div class="help">
+                    <a id="help" href="#"><span>?</span>&nbsp;&nbsp;<p>Need any help?</p> Don't hesitate to contact support!</a>
+                </div>
             </div>
-            
+            <div class="powered_by_stripe" >
+                <img src="./ASSETS/powered_by_stripe.png" alt="Powerd by Stripe">
+            </div>
         </div>
     </main>
-    <script src="./injex.js"></script>
+    <section>
+        <h1>Freelancer</h1>
+        <p class="subsup"><sup>$</sup>&nbsp;99 <sub>/year</sub></p>
+        <h3>Automatocally renews after 1 year</h3>
+        <div class="material-group">
+            <p class="material-p"><span class="material-symbols-outlined open">check</span>&nbsp;&nbsp;Use on 5 client sites</p> 
+            <p class="material-p"><span class="material-symbols-outlined open">check</span>&nbsp;&nbsp;Private repositories</p> 
+            <p class="material-p"><span class="material-symbols-outlined open">check</span>&nbsp;&nbsp;Email support</p> 
+        </div>
+        <p id="client-p">Need <b>20</b> client sites?</p>
+        <p id="client-pa" href="#">Switch to the Agency plan.</p>
+        <hr>
+        <p class="closing-remark">FTP is horrible to deal with. <b>WP Pusher</b> solves that issue, and the customer support is awesome!</p>
+        <div class="imgtext">
+            <img src="./ASSETS/Bitmap.png" alt="Kirk Beard's Passport Photograph">
+            <h2>Kirk Beard</h2>
+        </div>
+    </section>
+</div>
+    <hr id="nohr">
+    <footer>
+        <p>© 2018 WP Pusher IVS  ·  <span>Terms of Service</span></p>
+    </footer>
+    <script>
+        function displaySidebar() {
+            const sideBar = document.querySelector('.side-bar')
+            sideBar.style.display = 'flex'
+        }
+
+        function closeSidebar(){
+            const sideBarClose = document.querySelector('.side-bar')
+            sideBarClose.style.display = 'none'
+        }
+    </script>
 </body>
 </html>

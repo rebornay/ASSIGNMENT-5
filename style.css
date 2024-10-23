@@ -8,6 +8,7 @@
 :root {
   --background-color: #F5F8FA;
   --button-color: #038e7d;
+  --button-color-on-hover: #04ab97;
   --Freelance-block-color: #1179bf; 
   --Input-background-color: #edeff2;
   --Powered-by-stripe-color: #566473;
@@ -45,7 +46,7 @@ body {
   /*************************************** nav styling ********************************************/
 
   .logo-box img {
-    width:6rem;
+    width: 80%;
     height: auto;
   }
 
@@ -53,6 +54,47 @@ body {
     margin-block-start: 1.5rem;
   }
 
+  .side-bar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 15.625rem;
+    padding-block-start: 1rem;
+    z-index: 999;
+    height: 100vh;
+    background-color: rgba(249, 249, 249, 0.87);
+    backdrop-filter: (10px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.158);
+    /* display: flex; */
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .side-bar li {
+    width: 100%;
+    /* border: 1px solid red; */
+  }
+
+  .side-bar li  a {
+    /* color: var(--main-color); */
+    width: 100%;
+  }
+.menu-close, .menu-open {
+  outline: none;
+  border: none;
+  background-color: unset;
+  font-size: 1.8rem;
+}
+
+.menu-open {
+  
+}
+
+.hideOnPc {
+  display: none;
+}
   nav {
     /* border: 1px solid red; */
     padding-inline: 1rem;
@@ -62,39 +104,36 @@ body {
     justify-content: space-between;
     /* flex-wrap: wrap; */
     box-shadow: -9px 9px 12px -10px rgba(73,146,230,0.59);
-    /* -webkit-box-shadow: -9px 9px 38px -10px rgba(73,146,230,0.59);
-    -moz-box-shadow: -9px 9px 38px -10px rgba(73,146,230,0.59); */
+    -webkit-box-shadow: -9px 9px 12px -10px rgba(73,146,230,0.59);
+    -moz-box-shadow: -9px 9px 12px -10px rgba(73,146,230,0.59);
   }
 
   ul {
     display: flex;
-    align-items: center;
+    align-items:center ;
     /* border: 1px solid red; */
     justify-content: space-between;
     padding-inline: 1rem;
     gap: 1rem;
+    /* width: 100%; */
   }
 
   ul li a {
     text-decoration: none;
     color: var(--Link-color);
+    /* width: 100%; */
     transition: .3s ease-in-out;
     font-size: .8rem;
   }
 
-  ul li a:hover {
-    color: #28333e;
-    border: 1.5px solid #1D2C3C;
-    border-radius: 5%;
+  ul a:hover, .side-bar>li:hover {
+    /* color: #28333e; */
+    background-color: #f0f0f0;
+    /* border: 1.5px solid #1D2C3C; */
+    /* border-radius: 5%; */
     padding: .3rem .2rem;
   }
 
-  .menu-toggle {
-    border: unset;
-    background: unset;
-    color: var(--Link-color);
-    cursor:pointer;
-  }
 
   hr {
     /* padding-block-start: 1rem; */
@@ -106,10 +145,13 @@ body {
 
 main {
   background-color: var(--main-color);
-  height: 100vh;
+  /* height: 100vh; */
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
-.headermain, .headertextmain, .footermain {
+.headermain, .headertextmain, .footermain, section {
   padding: 1rem;
 }
 /* *************************STYLING FOR BLUE text************************** */
@@ -123,6 +165,55 @@ main {
 }
 
 /* ***************************STYLING FOR INPUT/LABEL************************************************** */
+
+
+input[type="text"], 
+input[type="password"], 
+input[type="email"], 
+input[type="number"] 
+{
+  outline: none;
+}
+
+.input1, .input2, .input3 {
+  width: 100%;
+}
+
+
+#firstname, #lastname, #email, #credit-card {
+  display: block;
+  font-size: 1rem;
+  width: 100%;
+  background-color: var(--Input-background-color);
+  border-radius: .2rem;
+  border: unset;
+  padding: .4rem;
+}
+
+#email {
+  width: 100%;
+  padding: .6rem;
+ } 
+
+.input3{
+  padding-block: 1.3rem;
+  /* border: 1px solid green; */
+}
+
+.credit-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 0 1rem;
+}
+
+.cardNum-input, .M-input, .CVC-input {
+  background-color: var(--Input-background-color);
+  padding-block: .6rem;
+  outline: none;
+  border: none;
+  width: 100%;
+}
 
 label {
   padding-block-start: 1rem;
@@ -152,68 +243,180 @@ label {
 }
 
 .greenBtn:hover {
-  color: var(--button-color);
-  background-color: var(--background-color);
+  color: var(--main-color); 
+  background-color: var(--button-color-on-hover);
   transition: .3s ease-in-out;
 }
 
-
-
-
-
-
-
-
-/* **************************FOOTER MAIN STYLING************************************************ */
-
-
-.input1, .input2 {
-  width: 100%;
+.footermain .input3 .help {
+  padding-block-start: .8rem;
 }
 
-.input3{
-  padding-block: 1.3rem;
+
+.footermain .powered_by_stripe {
+ display: flex;
+ align-items: center;
+ justify-content: center;
 }
 
-#firstname, #lastname, #email, #credit-card {
-  display: block;
+.footermain .input3 .help a#help {
+  text-decoration: unset;
+  font-size: .89rem;
+  text-align: center;
+  color: var(--Powered-by-stripe-color);
+}
+
+#help>span {
+  color: var(--Freelance-block-color);
+  border: 1.3px solid  var(--Freelance-block-color);
+  display: inline-block;
+  padding-block: .35rem;
+  padding-inline: .8rem;
+  border-radius: 50%;
+  font-size: .8rem;
+}
+.help a#help p {
+  color: black;
+  display: inline;
+  font-weight: bold;
+}
+
+/* ************************************SECTION STYLING************************************************ */
+
+section {
+  background-color: var(--Freelance-block-color);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+section h1 {
+  color: var(--main-color);
+  font-size: 1.3rem;
+}
+
+section h3 {
+  color: var(--main-color);
+  font-weight: 400;
   font-size: 1rem;
-  width: 100%;
-  background-color: var(--Input-background-color);
-  border-radius: .2rem;
-  border: unset;
-  padding: .4rem;
+  font-style: italic;
+  padding-block-end: .5rem;
 }
 
-input#email {
- width: 100%;
- padding: .6rem;
+section .subsup{
+  font-size: 3.5rem;
+  color: var(--main-color);
+  font-weight: 400;
+  padding-block-end: .5rem;
 }
+
+section p>sub, p>sup {
+  font-size: 1rem;
+}
+
+section .material-p{
+  font-size: 1rem;
+  color: var(--main-color);
+  padding-block: .4rem;
+}
+
+section #client-p {
+  padding-block: 1rem .6rem;
+  color: var(--main-color);
+}
+
+section #client-pa {
+  color: var(--main-color);
+  text-decoration: underline;
+  font-weight: bold;
+  padding-block: 0 1.5rem;
+}
+
+section .closing-remark{
+  font-style: italic;
+  padding-block: 1.8rem;
+  line-height: 1.2;
+  color: var(--main-color);
+}
+
+
+section .imgtext {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+section .imgtext h2 {
+  font-size: 1rem;
+  color: var(--main-color);
+}
+
+footer p {
+  text-align: center;
+  padding-block: .8rem;
+  font-size: .95rem;
+}
+
+footer p span {
+  color: var(--Powered-by-stripe-color);
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  margin: 0 auto;
+  padding-block: 3rem 1rem;
+  border-radius: 10px;
+  /* align-items: flex-start; */
+  /* justify-content: center; */
+  width: 90%;
+}
+
+main, section {
+  box-shadow: 4px 1px 15px -7px rgba(0,0,0,0.37);
+  /* -webkit-box-shadow: 4px 1px 26px -4px rgba(0,0,0,0.37);
+  -moz-box-shadow: 4px 1px 26px -4px rgba(0,0,0,0.37); */
+}
+
+
+/* ************************************************************************* */
 
 main .headermain h1 {
   font-weight: 400;
 }
 
-  @media screen and (max-width: 650px) {
-
-    nav {
-      position: relative;
-    }
-
-    ul {
-      display: block;
-      position: absolute;
-      top: 1.65rem;
-      right: 0;
-     padding-inline: 2rem;
-     padding-block: 1rem;
-      background-color: white;
-    }
-    ul li a {
-      text-align: justify;
-    }
-
-    .nav-menu.open {
+  @media screen and (max-width: 800px) {
+    .hideOnMobile {
       display: none;
     }
+
+    .hideOnPc {
+      display: block;
+    }
+    .container {
+      display: block;
+      /* margin: 0 auto; */
+      padding-block-start: 0rem;
+      width: 100%;
+    }
+    main, section {
+      border-radius: unset;
+    }
+
+    #nohr {
+      display: block;
+    }
+  }
+  @media (max-width: 1080px) and (max-width: 1400px) {
+    #nohr {
+      display: none;
+    }
+    section {
+      padding-block-start: 2rem;
+    }
+    main {
+      width: 100%;
+    }
+   
   }

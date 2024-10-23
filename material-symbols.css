@@ -1,0 +1,11 @@
+.material-symbols-outlined {
+    border: 1.5px solid var(--main-color);
+    color: var(--main-color);
+    border-radius: 50%;
+    padding: .2rem;
+  }
+
+
+  .material-symbols-outlined.open {
+    font-size: 1rem;
+  }
